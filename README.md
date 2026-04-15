@@ -29,7 +29,53 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+In the real world applications like spotify will collect data on your favorite songs and recommend new ones. They will usually recommend new songs based on the songs you've listened to before.
+
+The music recommender should take in the preferences from the user into account when creating a list of recommendations.
+Things like:
+- Genre
+- Mood
+- Artist
+- Acoustics
+- Energy, etc...
+
+The Song object will use:
+id: int
+title: str
+artist: str
+genre: str
+mood: str
+energy: float
+tempo_bpm: float
+valence: float
+danceability: float
+acousticness: float
+
+These will be used to compare multiple songs by the recommender.
+
+The UserProfile will collect:
+favorite_genre: str
+favorite_mood: str
+target_energy: float
+likes_acoustic: bool
+
+The recommender will take theses into consideration when choosing which songs to recommend. The songs that match these preferences more closely will rank higher.
+
+###
+
+Algorithm Recipe:
+
+The recommender will give each songs a score based on its genre, mood, energy and acoustics.
+Genre matches will acount for 40% of the score, 30% for mood, 20% for energy, and 10% for acoustics.
+The scores will be from 0 to 1, with 1 being a perfect match.
+One of the biases might be a priority of the genre.
+
 ---
+
+####
+
+Output Screenshot:
+![alt text](image.png)
 
 ## Getting Started
 
@@ -208,4 +254,3 @@ A few sentences about what you learned:
 - What surprised you about how your system behaved
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
-

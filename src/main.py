@@ -9,12 +9,12 @@ You will implement the functions in recommender.py:
 - recommend_songs
 """
 
-from recommender import load_songs, recommend_songs
+from recommender import *
 
 
 def main() -> None:
     songs = load_songs("data/songs.csv") 
-
+    print("Songs Loaded: " + str(len(songs)))
     # Starter example profile
     user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8}
 
@@ -28,6 +28,8 @@ def main() -> None:
         print(f"{song['title']} - Score: {score:.2f}")
         print(f"Because: {explanation}")
         print()
+
+    
 
 
 if __name__ == "__main__":
